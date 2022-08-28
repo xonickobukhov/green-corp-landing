@@ -9,6 +9,10 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px;
+	position: sticky;
+	background-color: #fff;
+	top: 0;
+	z-index: 1;
 }
 
 a {
@@ -32,7 +36,6 @@ button {
 	cursor: pointer;
 	box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
 	padding: 15px;
-	transition: background-color 0.3s ease-in;
 }
 
 select {
@@ -65,7 +68,7 @@ footer {
 	margin-right: 80px;
 }
 
-.footer__group h3 {
+.footer h3 {
 	font-size: 16px;
 	opacity: 0.7;
 	margin-bottom: 30px;
@@ -121,8 +124,24 @@ footer {
 	width: 500px;
 }
 
+@keyframes rotation {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 .about__sun-image {
 	width: 100px;
+	height: 100px;
+	/* animation: rotation;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite; */
+	position: absolute;
+	animation: rotation 10s infinite linear;
 }
 
 .form {
@@ -144,7 +163,7 @@ footer {
 .form label {
 	font-size: 18px;
 	font-weight: 600;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .form input,
@@ -155,6 +174,7 @@ footer {
 	padding: 0 20px;
 	border-radius: 15px;
 	border: none;
+	outline: none;
 }
 
 .form__group {
@@ -185,4 +205,76 @@ footer {
 button:hover {
 	background-color: #f6980c;
 	box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
+	transition: background-color 0.3s ease-in;
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+	.about {
+		padding: 115px 20px;
+	}
+
+	.about h1 {
+		font-size: 36px;
+		line-height: 40px;
+	}
+
+	.about__image {
+		width: 280px;
+	}
+
+	.about__sun-image {
+		width: 75px;
+		height: 75px;
+	}
+}
+
+/* Мобильные устройства */
+@media (max-width: 720px) {
+	header {
+		padding: 10px;
+	}
+
+	.header__logo {
+		height: 20px;
+	}
+
+	header a {
+		margin-right: 10px;
+	}
+
+	.about {
+		flex-direction: column-reverse;
+		padding: 50px 10px;
+	}
+
+	.about h1 {
+		font-size: 36px;
+		line-height: 40px;
+	}
+
+	.about__image {
+		width: 280px;
+	}
+
+	.about__sun-image {
+		width: 75px;
+		height: 75px;
+	}
+
+	.form {
+		padding: 50px 10px;
+	}
+
+	.form h1 {
+		font-size: 36px;
+	}
+
+	footer {
+		padding: 50px 10px;
+	}
+
+	.footer__container {
+		flex-direction: column;
+	}
 }

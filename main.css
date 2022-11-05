@@ -92,6 +92,7 @@ footer {
 	background: url("img/back.png") no-repeat;
 	background-position: center;
 	background-size: cover;
+	position: relative;
 }
 
 .about h1 {
@@ -122,6 +123,13 @@ footer {
 
 .about__image {
 	width: 500px;
+}
+
+.orb-canvas {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	right: 0;
 }
 
 @keyframes rotation {
